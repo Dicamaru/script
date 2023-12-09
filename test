@@ -1,0 +1,12 @@
+ function calcularValor() {
+  var btcAmount = parseFloat(document.getElementById('btcAmount').value);
+  var btcValue = parseFloat(document.getElementById('btcValue').value);
+
+  if (isNaN(btcAmount) || isNaN(btcValue)) {
+    alert('Por favor, introduce valores válidos.');
+    return;
+  }
+
+  var resultado = btcAmount * btcValue;
+  document.getElementById('resultado').innerHTML = 'El valor de ' + btcAmount + ' BTC sería: $' + resultado.toFixed(2);
+}
