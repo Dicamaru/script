@@ -1,15 +1,13 @@
-<input type="number" id="btcAmount" step="0.00000001" placeholder="0.00000000" required>
-var btcAmount = parseFloat(document.getElementById('btcAmount').value);
-
 function calcularValor() {
-  var btcAmount = parseFloat(document.getElementById('btcAmount').value);
+  var satoshisAmount = parseFloat(document.getElementById('btcAmount').value);
   var btcValue = parseFloat(document.getElementById('btcValue').value);
+  var customBtcValue = parseFloat(document.getElementById('customBtcValue').value);
 
-  if (isNaN(btcAmount) || isNaN(btcValue)) {
+  if (isNaN(satoshisAmount) || isNaN(btcValue) || isNaN(customBtcValue)) {
     alert('Por favor, introduce valores válidos.');
     return;
   }
 
-  var resultado = btcAmount * btcValue;
-  document.getElementById('resultado').innerHTML = 'El valor de ' + btcAmount + ' BTC sería: $' + resultado.toFixed(2);
+  var resultado = (satoshisAmount * customBtcValue) / btcValue;
+  document.getElementById('resultado').innerHTML = 'El valor sería: $' + resultado.toFixed(2);
 }
