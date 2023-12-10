@@ -1,4 +1,7 @@
- function calcularValor() {
+<input type="number" id="btcAmount" step="0.00000001" placeholder="0.00000000" required>
+var btcAmount = parseFloat(document.getElementById('btcAmount').value);
+
+function calcularValor() {
   var btcAmount = parseFloat(document.getElementById('btcAmount').value);
   var btcValue = parseFloat(document.getElementById('btcValue').value);
 
